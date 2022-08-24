@@ -2033,7 +2033,7 @@ footer {
 /*===== Top Restaurants Section Style 2 =====*/
 .top-restaurants-wrapper {
   float: left;
-  width: auto;
+  width: 180px;
 }
 .restaurants-wrapper.style2 > li {
   width: 16.667%;

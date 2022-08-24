@@ -97,7 +97,7 @@ require '../vender/massage.php';
                                 </div>
                             </div>
                             <?php  
-                                 $sql = "SELECT * FROM vendor LIMIT 4 ";
+                                 $sql = "SELECT * FROM vendor Limit 6";
                                  $res = mysqli_query($conn, $sql);
                                                                  
                                  if ($res == TRUE) {
@@ -106,33 +106,35 @@ require '../vender/massage.php';
                                             
                                          while ($fetch = mysqli_fetch_assoc($res)) {
                      
-                                             $id = $fetch['id'];
-                                             $resname = $fetch['resname']; 
-                                             $logo = $fetch['reslogo'];
-                                             $state =$fetch['states'];
-                                             $city =$fetch['city'];                                       
-                                             $country =$fetch['country']
-                                                                
-                                        
-                                    
-                            ?>  
-                            <div class="top-restaurants-wrapper">
+                                             $id = $fetch['id'];                                             
+                                             $logo = $fetch['reslogo'];  
+                                             ?>                         
+                                <div class="top-restaurants-wrapper">
                                 <ul class="restaurants-wrapper style2">                                                            
-                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 1" itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="top-restaurant1.png" itemprop="image"></a></div></li> 
+                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant " itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="resturant logo" itemprop="image"></a></div></li> 
                                
+<!-- 
+                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 1" itemprop="url"><img src="../assets/images/resource/top-restaurant1.png" alt="top-restaurant1.png" itemprop="image"></a></div></li>
+                                    <li class="wow bounceIn" data-wow-delay="0.4s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 2" itemprop="url"><img src="../assets/images/resource/top-restaurant2.png" alt="top-restaurant2.png" itemprop="image"></a></div></li>
+                                    <li class="wow bounceIn" data-wow-delay="0.6s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 3" itemprop="url"><img src="../assets/images/resource/top-restaurant3.png" alt="top-restaurant3.png" itemprop="image"></a></div></li>
+                                    <li class="wow bounceIn" data-wow-delay="0.8s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 4" itemprop="url"><img src="../assets/images/resource/top-restaurant4.png" alt="top-restaurant4.png" itemprop="image"></a></div></li>
+                                    <li class="wow bounceIn" data-wow-delay="1s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 5" itemprop="url"><img src="../assets/images/resource/top-restaurant5.png" alt="top-restaurant5.png" itemprop="image"></a></div></li> -->
+                                    
+                                 
                                    
                                 </ul>
                             </div>
+                            <?php
+                           }
+                        }
+                    }
+                ?>
                         </div>
                     </div>
                 </div>
             </div>
         </section><!-- top resturents -->
-       <?php
-                           }
-                        }
-                       }
-        ?>
+      
 
         <section>
             <div class="block">
@@ -194,9 +196,7 @@ require '../vender/massage.php';
                                     }
                                 }
                             }
-                        //vendor
-
-                            
+                                              
                             ?>
                                     
                                             
@@ -226,6 +226,8 @@ require '../vender/massage.php';
 								</div>
                             </div>
                         </div>
+
+
 						<div class="col-md-4 col-xs-12">
 							<div class="dishes-caro">
 								<div class="dish-item">
