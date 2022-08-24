@@ -1246,7 +1246,7 @@ header.sticky nav > div > ul > li span {font-size: 11px;}
 }
 .restaurants-wrapper {
   float: left;
-  width: 100%;
+  width: auto;
   padding: 0 30px;
   list-style: none;
   margin: 0;
@@ -2033,7 +2033,7 @@ footer {
 /*===== Top Restaurants Section Style 2 =====*/
 .top-restaurants-wrapper {
   float: left;
-  width: 100%;
+  width: auto;
 }
 .restaurants-wrapper.style2 > li {
   width: 16.667%;
