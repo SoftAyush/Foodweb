@@ -1,9 +1,7 @@
 <?php
 include '../file/dbconnation.php';
 SESSION_start();
-
-
-session_destroy();
+SESSION_destroy();
 
 header('location:venderLogin.php');
 
