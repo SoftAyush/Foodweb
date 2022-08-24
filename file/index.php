@@ -181,10 +181,10 @@ require '../vender/massage.php';
                                                 <span class="price">Rs.<?=$price?></span>
                                                 <a class="brd-rd2" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
                                                 <div class="restaurant-info">
-                                                    <img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="restaurant-logo1.png" itemprop="image" height=50px; width= auto;>
+                                                    <img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo'] ?>" alt="restaurant-logo1.png" itemprop="image" height=50px; width= 50px; style="border-radius: 50px;">
                                                     <div class="restaurant-info-inner">
                                                         <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url"><?php echo $fetch1['resname']?></a></h6>
-                                                        <span class="red-clr"><?=$city?>,<?=$country?></span>
+                                                        <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?></span>
                                                     </div>
                                                 </div>
                                             </div>

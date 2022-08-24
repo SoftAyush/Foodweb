@@ -7,7 +7,7 @@
     <meta name="keywords" content="" />
     <title>Food Web</title>
     <link rel="shortcut icon" href="../assets/images/3.jpg" type="image/x-icon" >
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- <link rel="stylesheet" href="../assets/css/style.css"> -->
 
     <link rel="stylesheet" href="../assets/css/icons.min.css">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
