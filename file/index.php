@@ -82,6 +82,7 @@ require '../vender/massage.php';
                 </div><!-- Restaurant Searching -->
             </div>
         </section>
+        
 
         <section>
             <div class="block remove-bottom">
@@ -114,10 +115,9 @@ require '../vender/massage.php';
                                                                 
                                         
                                     
-                            ?>
+                            ?>  
                             <div class="top-restaurants-wrapper">
-                                <ul class="restaurants-wrapper style2">
-                                                                  
+                                <ul class="restaurants-wrapper style2">                                                            
                                 <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 1" itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="top-restaurant1.png" itemprop="image"></a></div></li> 
                                
                                    
