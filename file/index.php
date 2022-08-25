@@ -95,6 +95,7 @@ require '../vender/massage.php';
                                     <p itemprop="description">Things that get tricky are things like burgers and fries, or things that are deep-fried. We do have a couple of burger restaurants that are capable of doing a good job transporting but it's  Fries are almost impossible.</p>
                                 </div>
                             </div>
+                            <div class="centeret">
                             <?php  
                                  $sql = "SELECT * FROM vendor LIMIT 4 ";
                                  $res = mysqli_query($conn, $sql);
@@ -123,17 +124,19 @@ require '../vender/massage.php';
                                    
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- top resturents -->
+                        
+        
        <?php
                            }
                         }
-                       }
+                    }
         ?>
-
+                            </div>
+        </div>
+                    </div>
+                </div>
+            </div>
+</section><!-- top resturents -->
         <section>
             <div class="block">
                 <div class="container">
@@ -166,7 +169,7 @@ require '../vender/massage.php';
                                     
                             ?>
                             </div>
-                                <div class="row remove-ext5">
+                                <div>
                                     <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">

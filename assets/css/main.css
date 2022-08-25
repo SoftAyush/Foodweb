@@ -2683,7 +2683,11 @@ footer {
 .contact-info-sec > .row > div:last-child {
     border: 0 none;
 }
-
+.centeret{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
 .contact-form-inner > h3 {
   font-size: 30px;
   font-family: Poppins;
