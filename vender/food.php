@@ -23,9 +23,10 @@ include '../vender/massage.php';
         <th>Category</th>
         <th>Actions</th>
     </tr>
-    <?php              
+    <?php  
+     $id= $_SESSION['user_id'];             
         $i=1;
-           $sql = "SELECT * FROM foods ";
+           $sql = "SELECT * FROM foods Where id= $id";
             $res = mysqli_query($conn, $sql);
             if ($res == TRUE) {
                 $count = mysqli_num_rows($res);

@@ -166,7 +166,7 @@ require '../vender/massage.php';
                                     <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">
-                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px"></a>
+                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px" width="400px"></a>
                                             
                                             </div>
                                             <div class="popular-dish-info">
@@ -242,10 +242,10 @@ require '../vender/massage.php';
                                     
                             ?>
 
-						<div class="col-md-4 col-xs-12">
-							<div class="dishes-caro">
+						<div class="col-md-4 col-xs-12" bgc>
+							<div class="dishes-caro" >
 								<div class="dish-item">
-									<figure><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="" height="300px"></figure>
+									<figure style="background-color:powderblue;"><img src="../assets/uploadedimage/foodimage/<?=$image ?>"  alt=" image" height="300px" width="400px"></figure>
 									<div class="item-meta">
 										<img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="" style="border-radius: 50px;">
 										<div>
@@ -272,8 +272,13 @@ require '../vender/massage.php';
                                         ?>
                         
 
-                        <?php  
-                                 $sql = "SELECT * FROM foods Limit 3 ";
+                        
+						<div class="col-md-8 col-xs-12">
+                       
+							<div class="popular-of-month">
+
+                            <?php  
+                                 $sql = "SELECT * FROM foods Limit 4 ";
                                  $res = mysqli_query($conn, $sql);
                                                                  
                                  if ($res == TRUE) {
@@ -293,11 +298,9 @@ require '../vender/massage.php';
                                         
                                     
                             ?>
-						<div class="col-md-8 col-xs-12">
-							<div class="popular-of-month">
 								<div class="pop-dish wow fadeIn" data-wow-delay="0.1s">
-									<div class="poplr-dish">
-										<img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="">
+									<div class="poplr-dish">                                   
+										<img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="" height="100px">
 										<div class="dish-meta">
 											<span>Rs.<?=$price?></span>
 											<h4><a href="#" title=""><?=$name?></a></h4>
@@ -309,23 +312,26 @@ require '../vender/massage.php';
 											<span><?=$fetch1['resname']?></span>
 											<p><?=$fetch1['city']?>,<?=$fetch1['country']?> </p>
 										</div>
+                                       	
 									</div>
-								</div>
-                                </div>
-                                <?php 
+                                    <?php 
                                          }
-                                    }
-                                }
-                                        ?>					
-								
-								
-							
+                                             }
+                                                 }
+                                    ?>
+                                   
+							</div>                               
+                        </div>                         				
 							<div class="rite-meta">
-                                	<a href="#" title="" class="view-more">view more food</a>
-                                </div>
+                                <a href="#" title="" class="view-more">view more food</a>
+                            </div>
+                              
 						</div>
+                      
                     </div>
+                    
                 </div>
+              
 				<div class="bottom-mockup"><img src="../assets/images/resource/mockup1.png" alt=""></div>
             </div>
         </section>
