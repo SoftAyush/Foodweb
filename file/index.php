@@ -111,15 +111,7 @@ require '../vender/massage.php';
                                              ?>                         
                                 <div class="top-restaurants-wrapper">
                                 <ul class="restaurants-wrapper style2">                                                            
-                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant " itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="resturant logo" itemprop="image"></a></div></li> 
-                               
-<!-- 
-                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 1" itemprop="url"><img src="../assets/images/resource/top-restaurant1.png" alt="top-restaurant1.png" itemprop="image"></a></div></li>
-                                    <li class="wow bounceIn" data-wow-delay="0.4s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 2" itemprop="url"><img src="../assets/images/resource/top-restaurant2.png" alt="top-restaurant2.png" itemprop="image"></a></div></li>
-                                    <li class="wow bounceIn" data-wow-delay="0.6s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 3" itemprop="url"><img src="../assets/images/resource/top-restaurant3.png" alt="top-restaurant3.png" itemprop="image"></a></div></li>
-                                    <li class="wow bounceIn" data-wow-delay="0.8s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 4" itemprop="url"><img src="../assets/images/resource/top-restaurant4.png" alt="top-restaurant4.png" itemprop="image"></a></div></li>
-                                    <li class="wow bounceIn" data-wow-delay="1s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant 5" itemprop="url"><img src="../assets/images/resource/top-restaurant5.png" alt="top-restaurant5.png" itemprop="image"></a></div></li> -->
-                                    
+                                <li class="wow bounceIn" data-wow-delay="0.2s"><div class="top-restaurant"><a class="brd-rd50" href="#" title="Restaurant " itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $logo ?>" alt="resturant logo" itemprop="image"></a></div></li>                                            
                                  
                                    
                                 </ul>
@@ -226,121 +218,106 @@ require '../vender/massage.php';
 								</div>
                             </div>
                         </div>
-
+                        <?php  
+                                 $sql = "SELECT * FROM foods Limit 3 ";
+                                 $res = mysqli_query($conn, $sql);
+                                                                 
+                                 if ($res == TRUE) {
+                                     $count = mysqli_num_rows($res);
+                                         if ($count > 0) {
+                                            
+                                         while ($fetch = mysqli_fetch_assoc($res)) {
+                     
+                                             $id = $fetch['id'];
+                                             $name = $fetch['foodname']; 
+                                             $image =$fetch['foodimage'];
+                                             $price = $fetch['foodprice'];                                   
+                                             $resid = $fetch['resid']; 
+                                             $res_all = "select * from vendor where id = '$resid'";
+                                             $res_name = mysqli_query($conn, $res_all);
+                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
+                                        
+                                    
+                            ?>
 
 						<div class="col-md-4 col-xs-12">
 							<div class="dishes-caro">
 								<div class="dish-item">
-									<figure><img src="../assets/images/resource/dish-caro1.jpg" alt=""></figure>
+									<figure><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt=""></figure>
 									<div class="item-meta">
-										<img src="../assets/images/resource/restaurant-logo2.png" alt="">
+										<img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="" style="border-radius: 50px;">
 										<div>
-											<span>Jagnetina Na Raznju</span>
-											<p>68 5th Avenue New York </p>
+											<span><?=$fetch1['resname']?></span>
+											<p><?=$fetch1['city']?>,<?=$fetch1['country']?> </p>
 										</div>
 									</div>
 									<div class="caro-dish-name">
-										<h4>Korean Bibimbap Yamyam</h4>
-										<span>Rs.10.00–Rs.30.00</span>
+										<h4><?=$name?></h4>
+										<span>RS.<?=$price?></span>
 									</div>
 								</div>
-                                <div class="dish-item">
-                                    <figure><img src="../assets/images/resource/dish-caro1.jpg" alt=""></figure>
-                                    <div class="item-meta">
-                                        <img src="../assets/images/resource/restaurant-logo3.png" alt="">
-                                        <div>
-                                            <span>Central Caffe Pizzeria</span>
-                                            <p>68 5th Avenue New York </p>
-                                        </div>
-                                    </div>
-                                    <div class="caro-dish-name">
-                                        <h4>Korean Bibimbap Yamyam</h4>
-                                        <span>Rs.10.00–Rs.30.00</span>
-                                    </div>
-                                </div>
-                                <div class="dish-item">
-                                    <figure><img src="../assets/images/resource/dish-caro1.jpg" alt=""></figure>
-                                    <div class="item-meta">
-                                        <img src="../assets/images/resource/restaurant-logo4.png" alt="">
-                                        <div>
-                                            <span>Dream Food By Opaq</span>
-                                            <p>68 5th Avenue New York </p>
-                                        </div>
-                                    </div>
-                                    <div class="caro-dish-name">
-                                        <h4>Korean Bibimbap Yamyam</h4>
-                                        <span>Rs.10.00–Rs.30.00</span>
-                                    </div>
-                                </div>
+                                
+                               
+                                 
+                                
 							</div>
+                            
 						</div>
+                        <?php 
+                                         }
+                                    }
+                                }
+                                        ?>
+                        
+
+                        <?php  
+                                 $sql = "SELECT * FROM foods Limit 3 ";
+                                 $res = mysqli_query($conn, $sql);
+                                                                 
+                                 if ($res == TRUE) {
+                                     $count = mysqli_num_rows($res);
+                                         if ($count > 0) {
+                                            
+                                         while ($fetch = mysqli_fetch_assoc($res)) {
+                     
+                                             $id = $fetch['id'];
+                                             $name = $fetch['foodname']; 
+                                             $image =$fetch['foodimage'];
+                                             $price = $fetch['foodprice'];                                   
+                                             $resid = $fetch['resid']; 
+                                             $res_all = "select * from vendor where id = '$resid'";
+                                             $res_name = mysqli_query($conn, $res_all);
+                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
+                                        
+                                    
+                            ?>
 						<div class="col-md-8 col-xs-12">
 							<div class="popular-of-month">
 								<div class="pop-dish wow fadeIn" data-wow-delay="0.1s">
 									<div class="poplr-dish">
-										<img src="../assets/images/resource/round-pic1.jpg" alt="">
+										<img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="">
 										<div class="dish-meta">
-											<span>Rs.10.00–Rs.30.00</span>
-											<h4><a href="#" title="">Tequila & Lime hake</a></h4>
+											<span>Rs.<?=$price?></span>
+											<h4><a href="#" title=""><?=$name?></a></h4>
 										</div>
 									</div>
 									<div class="item-meta">
-										<img alt="" src="../assets/images/resource/restaurant-logo2.png">
+										<img alt="" src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" style="border-radius: 50px;" >
 										<div>
-											<span>Jagnetina Na Raznju</span>
-											<p>68 5th Avenue New York </p>
+											<span><?=$fetch1['resname']?></span>
+											<p><?=$fetch1['city']?>,<?=$fetch1['country']?> </p>
 										</div>
 									</div>
 								</div>
-								<div class="pop-dish wow fadeIn" data-wow-delay="0.2s">
-									<div class="poplr-dish">
-										<img src="../assets/images/resource/round-pic2.jpg" alt="">
-										<div class="dish-meta">
-											<span>Rs.10.00–Rs.30.00</span>
-											<h4><a href="#" title="">Maximus nibh facilisis</a></h4>
-										</div>
-									</div>
-									<div class="item-meta">
-										<img alt="" src="../assets/images/resource/restaurant-logo3.png">
-										<div>
-											<span>Central Caffe Pizzeria</span>
-											<p>68 5th Avenue New York </p>
-										</div>
-									</div>
-								</div>
-								<div class="pop-dish wow fadeIn" data-wow-delay="0.3s">
-									<div class="poplr-dish">
-										<img src="../assets/images/resource/round-pic3.jpg" alt="">
-										<div class="dish-meta">
-											<span>Rs.10.00–Rs.30.00</span>
-											<h4><a href="#" title="">Hendrerit nisi venenatis</a></h4>
-										</div>
-									</div>
-									<div class="item-meta">
-										<img alt="" src="../assets/images/resource/restaurant-logo4.png">
-										<div>
-											<span>Dream Food By Opaq</span>
-											<p>68 5th Avenue New York </p>
-										</div>
-									</div>
-								</div>
-								<div class="pop-dish">
-									<div class="poplr-dish wow fadeIn" data-wow-delay="0.4s">
-										<img src="../assets/images/resource/round-pic4.jpg" alt="">
-										<div class="dish-meta">
-											<span>Rs.10.00–Rs.30.00</span>
-											<h4><a href="#" title="">Grilled Shrimp Scampi</a></h4>
-										</div>
-									</div>
-									<div class="item-meta">
-										<img alt="" src="../assets/images/resource/restaurant-logo5.png">
-										<div>
-											<span>Fabio Al Porto Ristorante</span>
-											<p>68 5th Avenue New York </p>
-										</div>
-									</div>
-								</div>
-							</div>
+                                </div>
+                                <?php 
+                                         }
+                                    }
+                                }
+                                        ?>					
+								
+								
+							
 							<div class="rite-meta">
                                 	<a href="#" title="" class="view-more">view more food</a>
                                 </div>
