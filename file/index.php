@@ -96,6 +96,7 @@ require '../vender/massage.php';
                                     <p itemprop="description">Things that get tricky are things like burgers and fries, or things that are deep-fried. We do have a couple of burger restaurants that are capable of doing a good job transporting but it's  Fries are almost impossible.</p>
                                 </div>
                             </div>
+                            <div class="centeret">
                             <?php  
                                  $sql = "SELECT * FROM vendor Limit 6";
                                  $res = mysqli_query($conn, $sql);
@@ -119,9 +120,10 @@ require '../vender/massage.php';
                             <?php
                            }
                         }
-                    }
-                ?>
+                       }
+        ?>
                         </div>
+                       
                     </div>
                 </div>
             </div>
@@ -160,12 +162,12 @@ require '../vender/massage.php';
                                     
                             ?>
                             </div>
-                                <div class="row remove-ext5">
+                                <div>
                                     <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">
-                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image"></a>
-                                                
+                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px"></a>
+                                            
                                             </div>
                                             <div class="popular-dish-info">
                                                 <h4 itemprop="headline">
