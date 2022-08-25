@@ -85,7 +85,7 @@ include '../layout/heading.php';
     											</figure>
     											<div class="uper-meta">
     												<i><img src="../assets/images/icon5.png" alt=""></i>
-    												<h4><a href="#" title="">Russian Food</a></h4>
+    												<h4><a href="#" title="">Chiness Food</a></h4>
     												<span>About electric do in market</span>
     											</div>
     										</div>
@@ -97,13 +97,13 @@ include '../layout/heading.php';
     											</figure>
     											<div class="uper-meta">
     												<i><img src="../assets/images/icon6.png" alt=""></i>
-    												<h4><a href="#" title="">American Food</a></h4>
+    												<h4><a href="#" title="">Indian Food</a></h4>
     												<span>About electric do in market</span>
     											</div>
     										</div>
     									</div>
     								</div>
-                                    <div class="pagination-wrapper text-center">
+                                    <!-- <div class="pagination-wrapper text-center">
                                         <ul class="pagination justify-content-center">
                                             <li class="page-item prev"><a class="page-link brd-rd2" href="#" itemprop="url">PREVIOUS</a></li>
                                             <li class="page-item active"><span class="page-link brd-rd2">1</span></li>
@@ -115,7 +115,8 @@ include '../layout/heading.php';
                                             <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li>
                                             <li class="page-item next"><a class="page-link brd-rd2" href="#" itemprop="url">NEXT</a></li>
                                         </ul>
-                                    </div><!-- Pagination Wrapper -->
+                                    </div> -->
+									<!-- Pagination Wrapper -->
                                 </div><!-- Section Box -->
                             </div>
                         </div>

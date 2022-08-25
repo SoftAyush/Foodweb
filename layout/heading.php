@@ -91,7 +91,7 @@
                                     <ul class="sub-dropdown">
                                         <li><a href="../file/restaurent.php" title="RESTAURANT 1" itemprop="url">RESTAURANT </a></li>
                                         <!-- <li><a href="" title="RESTAURANT 2" itemprop="url">RESTAURANT 2</a></li> -->
-                                        <li><a href="../file/restaurent_dretail.php" title="RESTAURANT DETAILS" itemprop="url">RESTAURANT DETAILS</a></li>
+                                        <!-- <li><a href="../file/restaurent_dretail.php" title="RESTAURANT DETAILS" itemprop="url">RESTAURANT DETAILS</a></li> -->
                                         <!-- <li><a href="../file/food_recipes.php" title="RESTAURANT DETAILS" itemprop="url">FOOD RECIPES</a></li> -->
                                         <!-- <li><a href="our-articles.html" title="RESTAURANT DETAILS" itemprop="url">OUR ARTICLES</a></li> -->
                                         <li><a href="../file/menu.php" title="RESTAURANT DETAILS" itemprop="url">OUR MENU</a></li>

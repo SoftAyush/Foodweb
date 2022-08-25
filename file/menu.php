@@ -1,5 +1,6 @@
 <?php
 include '../layout/heading.php';
+include '../file/dbconnation.php';
 ?>
 <section>
             <div class="block">
@@ -30,144 +31,64 @@ include '../layout/heading.php';
                             <div class="sec-box">
                                 <div class="remove-ext">
                                     <div class="row">
+                                    <?php  
+                                         $sql = "SELECT * FROM foods Limit 9 ";
+                                            $res = mysqli_query($conn, $sql);
+                                                                 
+                                        if ($res == TRUE) {
+                                         $count = mysqli_num_rows($res);
+                                         if ($count > 0) {
+                                            
+                                         while ($fetch = mysqli_fetch_assoc($res)) {
+                     
+                                             $id = $fetch['id'];
+                                             $name = $fetch['foodname']; 
+                                             $image =$fetch['foodimage'];
+                                             $price = $fetch['foodprice'];                                   
+                                             $resid = $fetch['resid']; 
+                                             $res_all = "select * from vendor where id = '$resid'";
+                                             $res_name = mysqli_query($conn, $res_all);
+                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
+                                        ?>
                                         <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img1.jpg" alt="popular-dish-img1.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
+                                                <a href="#" title="" itemprop="url">
+                                                    <img src="../assets/uploadedimage/foodimage/<?=$image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px" width="400px"></a>
+                                               
                                             </div>
                                             <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Chili Spicy Food</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$85.00</span>
+                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url"><?=$name?></a></h4>
+                                                <span class="price">Rs.<?=$price?></span>
                                                 <a class="brd-rd4 " href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
                                                 <div class="restaurant-info">
                                                     <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo1.png" itemprop="image">
                                                     <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
+                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url"><?=$fetch1['resname']?></a></h6>
+                                                        <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?> </span>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div><!-- Popular Dish Box -->
                                     </div>
-                                    <div class="col-md-4 col-sm-6 col-lg-4">
-                                        <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.3s">
-                                            <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img2.jpg" alt="popular-dish-img2.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 3.25</span>
-                                            </div>
-                                            <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Crab With Curry Sources</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$70.00</span>
-                                                <a class="brd-rd4" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                <div class="restaurant-info">
-                                                    <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo2.png" itemprop="image">
-                                                    <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- Popular Dish Box -->
+                                    <?php
+                                         }
+                                    }
+                                }
+
+                                ?>                               
+                                        </div>
                                     </div>
-                                    <div class="col-md-4 col-sm-6 col-lg-4">
-                                        <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.4s">
-                                            <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img3.jpg" alt="popular-dish-img3.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 5.00</span>
-                                            </div>
-                                            <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Salted Fried Chicken $20</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$99.00</span>
-                                                <a class="brd-rd4" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                <div class="restaurant-info">
-                                                    <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo3.png" itemprop="image">
-                                                    <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- Popular Dish Box -->
-                                    </div>
-									<div class="col-md-4 col-sm-6 col-lg-4">
-                                        <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.5s">
-                                            <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img1.jpg" alt="popular-dish-img1.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                            </div>
-                                            <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Chili Spicy Food</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$85.00</span>
-                                                <a class="brd-rd4 " href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                <div class="restaurant-info">
-                                                    <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo1.png" itemprop="image">
-                                                    <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- Popular Dish Box -->
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-lg-4">
-                                        <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.6s">
-                                            <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img2.jpg" alt="popular-dish-img2.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 3.25</span>
-                                            </div>
-                                            <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Crab With Curry Sources</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$70.00</span>
-                                                <a class="brd-rd4" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                <div class="restaurant-info">
-                                                    <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo2.png" itemprop="image">
-                                                    <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- Popular Dish Box -->
-                                    </div>
-                                    <div class="col-md-4 col-sm-6 col-lg-4">
-                                        <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.7s">
-                                            <div class="popular-dish-thumb">
-                                                <a href="food-detail.html" title="" itemprop="url"><img src="../assets/images/resource/popular-dish-img3.jpg" alt="popular-dish-img3.jpg" itemprop="image"></a>
-                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 5.00</span>
-                                            </div>
-                                            <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url">Salted Fried Chicken $20</a></h4>
-                                                <p itemprop="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                                                <span class="price">$99.00</span>
-                                                <a class="brd-rd4" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
-                                                <div class="restaurant-info">
-                                                    <img src="../assets/images/resource/restaurant-logo1.png" alt="restaurant-logo3.png" itemprop="image">
-                                                    <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Fabio al Porto Ristorante</a></h6>
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div><!-- Popular Dish Box -->
-                                    </div>
-                                    </div>
-                                </div>
                                 <div class="pagination-wrapper text-center">
                                     <ul class="pagination justify-content-center">
                                         <li class="page-item prev"><a class="page-link brd-rd2" href="#" itemprop="url">PREVIOUS</a></li>
                                         <li class="page-item active"><span class="page-link brd-rd2">1</span></li>
-                                        <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">2</a></li>
+                                        <!-- <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">2</a></li>
                                         <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">3</a></li>
                                         <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">4</a></li>
                                         <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">5</a></li>
                                         <li class="page-item">........</li>
-                                        <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li>
+                                        <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li> -->
                                         <li class="page-item next"><a class="page-link brd-rd2" href="#" itemprop="url">NEXT</a></li>
                                     </ul>
                                 </div><!-- Pagination Wrapper -->

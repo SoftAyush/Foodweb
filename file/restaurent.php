@@ -3,7 +3,7 @@
  include '../file/dbconnation.php';
  ?>
 
-<section>
+    <section>
             <div class="block">
 				<div class="fixed-bg" style="background-image: url(../assets/images/bgi.jpg); background-size: 100%;"></div>
                 <div class="page-title-wrapper text-center">
@@ -51,20 +51,15 @@
                                                     <h4 class="widget-title2 sudo-bg-red" itemprop="headline">Search Filters</h4>
                                                     <div class="widget-data">
                                                         <ul>
-                                                            <li><a href="#" title="" itemprop="url">Fast Food</a> <span>30</span></li>
+                                                           
                                                             <li><a href="#" title="" itemprop="url">North Indian</a> <span>28</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Chinese</a> <span>25</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Bakery</a> <span>11</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Mughlai</a> <span>7</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Pizza</a> <span>6</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Ice Cream</a> <span>6</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Rolls</a> <span>6</span></li>
-                                                            <li><a href="#" title="" itemprop="url">Cafe</a> <span>5</span></li>
+                                                            <li><a href="#" title="" itemprop="url">Chinese</a> <span>25</span></li>                                                            
+                                                            <li><a href="#" title="" itemprop="url">Pizza</a> <span>6</span></li>                                                          
                                                             <li><a href="#" title="" itemprop="url">Italian</a> <span>5</span></li>
                                                         </ul>
                                                     </div>
                                                 </div>
-                                                <div class="widget style2 quick_filters wow fadeIn" data-wow-delay="0.2s">
+                                                <!-- <div class="widget style2 quick_filters wow fadeIn" data-wow-delay="0.2s">
                                                     <h4 class="widget-title2 sudo-bg-red" itemprop="headline">Quick Filters</h4>
                                                     <div class="widget-data">
                                                         <ul>
@@ -75,8 +70,8 @@
                                                             <li><span class="radio-box"><input type="radio" name="filter" id="filt1-5"><label for="filt1-5">Online Payments</label></span></li>
                                                         </ul>
                                                     </div>
-                                                </div>
-                                                <div class="widget style2 quick_filters wow fadeIn" data-wow-delay="0.2s">
+                                                </div> -->
+                                                <!-- <div class="widget style2 quick_filters wow fadeIn" data-wow-delay="0.2s">
                                                     <h4 class="widget-title2 sudo-bg-red" itemprop="headline">Quick Filters</h4>
                                                     <div class="widget-data">
                                                         <ul>
@@ -86,175 +81,56 @@
                                                             <li><span class="radio-box"><input type="radio" name="filter2" id="filt2-4"><label for="filt2-4">Up to ₹500</label></span></li>
                                                         </ul>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div><!--Sidebar -->
                                         </div>
                                         <div class="col-md-9 col-sm-12 col-lg-9">
                                             <div class="title2-wrapper">
-                                                <h3 class="marginb-0" itemprop="headline">Order food online in London</h3>
+                                                <h3 class="marginb-0" itemprop="headline">Order food online in Nepal</h3>
                                             </div>
                                             <div class="remove-ext">
                                                 <div class="row">
+                                                <?php  
+                                         $sql = "SELECT * FROM foods ";
+                                            $res = mysqli_query($conn, $sql);
+                                                                 
+                                        if ($res == TRUE) {
+                                         $count = mysqli_num_rows($res);
+                                         if ($count > 0) {
+                                            
+                                         while ($fetch = mysqli_fetch_assoc($res)) {
+                     
+                                             $id = $fetch['id'];
+                                             $name = $fetch['foodname']; 
+                                             $image =$fetch['foodimage'];
+                                             $price = $fetch['foodprice'];                                   
+                                             $resid = $fetch['resid']; 
+                                             $res_all = "select * from vendor where id = '$resid'";
+                                             $res_name = mysqli_query($conn, $res_all);
+                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
+                                        ?>
                                                     <div class="col-md-6 col-sm-6 col-lg-6">
                                                         <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.2s">
                                                             <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img1.png" alt="most-popular-img1.png" itemprop="image"></a>
+                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="most-popular-img" itemprop="image" style="border-radius: 50px;"></a>
                                                             </div>
                                                             <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
+                                                                <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?></span>
+                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url"><?=$fetch1['resname']?></a></h4>
+                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url"><?=$name?></a></span>
                                                                 <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
+                                                                    <li><i class="fa fa-check-circle-o"></i> Rs.<?=$price?></li>
+                                                                    <li><i class="flaticon-money"></i> Accepts cash payments</li>
                                                                 </ul>
-                                                                <!-- <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span> -->
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
+                                                                <a class="brd-rd30" href="#" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.3s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img2.png" alt="most-popular-img2.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Burger King</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.4s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img3.png" alt="most-popular-img3.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Wendy's Cafe</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.5s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img4.png" alt="most-popular-img4.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Restaurant</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.6s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img5.png" alt="most-popular-img5.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.7s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img6.png" alt="most-popular-img6.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.8s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img7.png" alt="most-popular-img7.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-6 col-sm-6 col-lg-6">
-                                                        <div class="featured-restaurant-box with-bg style2 brd-rd12 wow fadeIn" data-wow-delay="0.9s">
-                                                            <div class="featured-restaurant-thumb">
-                                                                <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img8.png" alt="most-popular-img8.png" itemprop="image"></a>
-                                                            </div>
-                                                            <div class="featured-restaurant-info">
-                                                                <span class="red-clr">5th Avenue New York 68</span>
-                                                                <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a></span>
-                                                                <ul class="post-meta">
-                                                                    <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                    <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                                </ul>
-                                                                <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
-                                                                <span class="post-likes style2 red-clr"><i class="fa fa-heart-o"></i> 12</span>
-                                                                <a class="brd-rd30" href="restaurant-detail.html" title="Order Online"><i class="fa fa-angle-double-right"></i> Order Online</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                    <?php 
+                                         }
+                                             }
+                                                 }
+                                                    ?>                                                    
                                                 </div>
                                             </div>
                                         </div>
