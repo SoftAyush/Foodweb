@@ -245,7 +245,7 @@ require '../vender/massage.php';
 						<div class="col-md-4 col-xs-12">
 							<div class="dishes-caro">
 								<div class="dish-item">
-									<figure><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt=""></figure>
+									<figure><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="" height="300px"></figure>
 									<div class="item-meta">
 										<img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="" style="border-radius: 50px;">
 										<div>
