@@ -161,7 +161,7 @@ section{
 
 .block {
   float: left;
-  padding: 120px 0;
+  padding: 60px 0;
   position: relative;
   width: 100%;
 }
@@ -6552,7 +6552,7 @@ a.thanks-close:focus {color: #333;}
 .dish-item {
     background: #fff none repeat scroll 0 0;
     border-radius: 6px;
-    float: left;
+    float: left !important;
     padding-bottom: 70px;
     position: relative;
     width: 100%;

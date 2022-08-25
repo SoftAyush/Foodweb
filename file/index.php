@@ -357,82 +357,52 @@ require '../vender/massage.php';
                                 <div class="filters-inner">
                                     <div class="row">
                                         <div class="masonry">
-                                            <div class="col-md-6 col-sm-6 col-lg-6 filter-item filter-item1">
+                                        <?php  
+                                         $sql = "SELECT * FROM foods Limit 4 ";
+                                            $res = mysqli_query($conn, $sql);
+                                                                 
+                                        if ($res == TRUE) {
+                                         $count = mysqli_num_rows($res);
+                                         if ($count > 0) {
+                                            
+                                         while ($fetch = mysqli_fetch_assoc($res)) {
+                     
+                                             $id = $fetch['id'];
+                                             $name = $fetch['foodname']; 
+                                             $image =$fetch['foodimage'];
+                                             $price = $fetch['foodprice'];                                   
+                                             $resid = $fetch['resid']; 
+                                             $res_all = "select * from vendor where id = '$resid'";
+                                             $res_name = mysqli_query($conn, $res_all);
+                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
+                                        ?>
+                                            <div class="col-md-6 col-sm-6 col-lg-6  ">
                                                 <div class="featured-restaurant-box style2 brd-rd12 wow fadeIn" data-wow-delay="0.1s">
                                                     <div class="featured-restaurant-thumb">
-                                                        <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img1-1.png" alt="most-popular-img1-1.png" itemprop="image"></a>
+                                                        <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="most-popular-img" itemprop="image" style="border-radius: 50px;"></a>
                                                     </div>
                                                     <div class="featured-restaurant-info">
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                        <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a>, <a href="#" title="" itemprop="url">Beef Roast</a></span>
+                                                        <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?></span>
+                                                        <h4 itemprop="headline"><a href="#" title="" itemprop="url"><?=$fetch1['resname']?></a></h4>
+                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url"><?=$name?></a></span>
                                                         <ul class="post-meta">
-                                                            <li><i class="fa fa-check-circle-o"></i> Min order Rs.50</li>
+                                                            <li><i class="fa fa-check-circle-o"></i>  Rs.<?=$price?></li>
                                                             
                                                             <li><i class="flaticon-money"></i> Accepts cash payments</li>
                                                         </ul>
                                                         
-                                                        <a class="brd-rd5" href="restaurant-detail.html" title="Order Online">Order Now</a>
+                                                        <a class="brd-rd5" href="#" title="Order Online">Order Now</a>
                                                     </div>
+
                                                 </div>
+                                              
                                             </div>
-                                            <div class="col-md-6 col-sm-6 col-lg-6 filter-item filter-item2">
-                                                <div class="featured-restaurant-box style2 brd-rd12 wow fadeIn" data-wow-delay="0.2s">
-                                                    <div class="featured-restaurant-thumb">
-                                                        <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img1-2.png" alt="most-popular-img1-2.png" itemprop="image"></a>
-                                                    </div>
-                                                    <div class="featured-restaurant-info">
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                        <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Burger King</a></h4>
-                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a>, <a href="#" title="" itemprop="url">Beef Roast</a></span>
-                                                        <ul class="post-meta">
-                                                            <li><i class="fa fa-check-circle-o"></i> Min order Rs.50</li>
-                                                            
-                                                            <li><i class="flaticon-money"></i> Accepts cash payments</li>
-                                                        </ul>
-                                                        
-                                                        <a class="brd-rd5" href="restaurant-detail.html" title="Order Online">Order Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-lg-6 filter-item filter-item3">
-                                                <div class="featured-restaurant-box style2 brd-rd12 wow fadeIn" data-wow-delay="0.3s">
-                                                    <div class="featured-restaurant-thumb">
-                                                        <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img1-3.png" alt="most-popular-img1-3.png" itemprop="image"></a>
-                                                    </div>
-                                                    <div class="featured-restaurant-info">
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                        <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Wendy's Cafe</a></h4>
-                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a>, <a href="#" title="" itemprop="url">Beef Roast</a></span>
-                                                        <ul class="post-meta">
-                                                            <li><i class="fa fa-check-circle-o"></i> Min order Rs.50</li>
-                                                           
-                                                            <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                        </ul>
-                                                       
-                                                        <a class="brd-rd5" href="restaurant-detail.html" title="Order Online">Order Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-6 col-lg-6 filter-item filter-item1 filter-item2 filter-item3">
-                                                <div class="featured-restaurant-box style2 brd-rd12 wow fadeIn" data-wow-delay="0.4s">
-                                                    <div class="featured-restaurant-thumb">
-                                                        <a href="restaurant-detail.html" title="" itemprop="url"><img src="../assets/images/resource/most-popular-img1-4.png" alt="most-popular-img1-4.png" itemprop="image"></a>
-                                                    </div>
-                                                    <div class="featured-restaurant-info">
-                                                        <span class="red-clr">5th Avenue New York 68</span>
-                                                        <h4 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url">Restaurant</a></h4>
-                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url">Apple Juice</a>, <a href="#" title="" itemprop="url">BB.Q</a>, <a href="#" title="" itemprop="url">Beef Roast</a></span>
-                                                        <ul class="post-meta">
-                                                            <li><i class="fa fa-check-circle-o"></i> Min order Rs.50</li>
-                                                            <li><i class="flaticon-transport"></i> 30min</li>
-                                                            <li><i class="flaticon-money"></i> Accepts cash & online payments</li>
-                                                        </ul>
-                                                       
-                                                        <a class="brd-rd5" href="restaurant-detail.html" title="Order Online">Order Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <?php 
+                                         }
+                                             }
+                                                 }
+                                             ?>
+
                                         </div>
                                     </div>
                                 </div>
