@@ -1,7 +1,7 @@
 <?php
 include '../file/dbconnation.php';
 session_start();
-    // echo $_SESSION['islogin'];
+
 
 if(isset($_SESSION['islogin']) && ($_SESSION['islogin'] == true)){ //if login in session is not set
     // header("Location:index.php");
@@ -12,12 +12,15 @@ if(isset($_SESSION['islogin']) && ($_SESSION['islogin'] == true)){ //if login in
     // header("Location:venderLogin.php");
 }
 
+
 ?>
 
 
 <?php 
 include '../layout/heading.php';
 require '../vender/massage.php';
+
+print_r($_SESSION['user_id']);
  ?>
             <section>
             <div class="block">

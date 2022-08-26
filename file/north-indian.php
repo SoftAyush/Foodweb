@@ -33,7 +33,7 @@ include '../file/dbconnation.php';
                                 <div class="remove-ext">
                                     <div class="row">
                                     <?php  
-                                         $sql = "SELECT * FROM foods Limit 9 ";
+                                         $sql =" SELECT category.name, foods.foodname,foods.foodimage,foods.foodprice,foods.resid FROM category CROSS JOIN foods WHERE category.id = foods.category AND category.name='North Indian'";
                                             $res = mysqli_query($conn, $sql);
                                                                  
                                         if ($res == TRUE) {
@@ -42,7 +42,7 @@ include '../file/dbconnation.php';
                                             
                                          while ($fetch = mysqli_fetch_assoc($res)) {
                      
-                                             $id = $fetch['id'];
+                                             
                                              $name = $fetch['foodname']; 
                                              $image =$fetch['foodimage'];
                                              $price = $fetch['foodprice'];                                   

@@ -1,9 +1,10 @@
 <?php
+session_start();
 include '../layout/heading.php';
 include '../file/dbconnation.php';
+$id= $_SESSION['user_id'];
 
-
-$sql = "SELECT * FROM users ";
+$sql = "SELECT * FROM users Where id= $id";
 $res = mysqli_query($conn, $sql);
 if ($res == TRUE) {
     $count = mysqli_num_rows($res);
@@ -61,7 +62,7 @@ if ($res == TRUE) {
                                                         <div class="user-info-inner">
                                                             <h5 itemprop="headline"><a href="#" title="" itemprop="url"><?php echo $name; ?></a></h5>
                                                             <span><a href="#" title="" itemprop="url"><?php echo $email; ?></a></span>
-                                                            <a class="brd-rd3 sign-out-btn yellow-bg" href="#" title="" itemprop="url"><i class="fa fa-sign-out"></i> SIGN OUT</a>
+                                                            <a class="brd-rd3 sign-out-btn yellow-bg" href="../file/userlogout.php" title="" itemprop="url"><i class="fa fa-sign-out"></i> SIGN OUT</a>
                                                         </div>
                                                     </div>
                                                     <ul class="nav nav-tabs">
