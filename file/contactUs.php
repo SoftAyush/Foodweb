@@ -39,23 +39,23 @@ include '../layout/heading.php';
                                             <div class="contact-info-box">
                                                 <i class="fa fa-phone-square"></i>
                                                 <h5 itemprop="headline">PHONE</h5>
-                                                <p itemprop="description">Phone 01: (0091) 8547 632521</p>
-                                                <p itemprop="description">Phone 02: (084) 965 4788</p>
+                                                <!-- <p itemprop="description">Phone 01: (+01) 8547 6325</p> -->
+                                                <p itemprop="description">Phone 02: (+01) 965 4788</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-lg-4">
                                             <div class="contact-info-box">
                                                 <i class="fa fa-map-marker"></i>
                                                 <h5 itemprop="headline">ADDRESS</h5>
-                                                <p itemprop="description">5Tth Floor, AH Building, 756 New St Melbourne, Australia.</p>
+                                                <p itemprop="description">5Tth Floor, AH Building, Kathmandu, Nepal.</p>
                                             </div>
                                         </div>
                                         <div class="col-md-4 col-sm-4 col-lg-4">
                                             <div class="contact-info-box">
                                                 <i class="fa fa-envelope"></i>
                                                 <h5 itemprop="headline">EMAIL</h5>
-                                                <p itemprop="description">support@yourdomain.com</p>
-                                                <p itemprop="description">hello@yourdomain.com</p>
+                                                <p itemprop="description">foodweb@gmail.com</p>
+                                                <!-- <p itemprop="description">hello@yourdomain.com</p> -->
                                             </div>
                                         </div>
                                     </div>

@@ -8,7 +8,7 @@ include '../file/dbconnation.php';
                 <div class="page-title-wrapper text-center">
                     <div class="col-md-12 col-sm-12 col-lg-12">
                         <div class="page-title-inner">
-                            <h1 itemprop="headline">Our Menu</h1>
+                            <h1 itemprop="headline">North Indian Foods</h1>
                                 <span>A Greate Restaurant Website</span>
                         </div>
                     </div>
@@ -19,7 +19,8 @@ include '../file/dbconnation.php';
             <div class="container">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../file/index.php" title="" itemprop="url">Home</a></li>
-                    <li class="breadcrumb-item active">our menus</li>
+                    <li class="breadcrumb-item"><a href="../file/restaurent.php" title="" itemprop="url">Restaurant</a></li> 
+                    <li class="breadcrumb-item active">North Indian</li>
                 </ol>
             </div>
         </div> 

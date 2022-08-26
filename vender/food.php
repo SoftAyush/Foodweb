@@ -28,7 +28,7 @@ include '../vender/massage.php';
         $i=1;
            $sql = "SELECT * FROM foods Where id= $id";
             $res = mysqli_query($conn, $sql);
-            if ($res == TRUE) {
+                if($res == TRUE) {
                 $count = mysqli_num_rows($res);
                     if ($count > 0) {
                        

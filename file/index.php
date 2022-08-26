@@ -93,7 +93,7 @@ require '../vender/massage.php';
                                 <div class="title1-inner">
                                     <span>Website for Restaurant and Cafe</span>
                                     <h2 itemprop="headline">Top Restaurants</h2>
-                                    <p itemprop="description">Things that get tricky are things like burgers and fries, or things that are deep-fried. We do have a couple of burger restaurants that are capable of doing a good job transporting but it's  Fries are almost impossible.</p>
+                                    <p itemprop="description">Want a delicious meal, but no time we will deliver it hot and yummy.</p>
                                 </div>
                             </div>
                             <div class="centeret">
