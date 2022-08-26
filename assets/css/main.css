@@ -1378,6 +1378,7 @@ h3.marginb-0 {margin-bottom: 0;}
 .popular-dish-thumb {
   float: left;
   width: 100%;
+ 
   position: relative;
 }
 .popular-dish-thumb > a {

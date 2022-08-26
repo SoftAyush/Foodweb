@@ -173,7 +173,7 @@ require '../vender/massage.php';
                                     <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">
-                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image"></a>
+                                                <a href="#" title="" itemprop="url"><img height="200px" src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image"></a>
                                                 
                                             </div>
                                             <div class="popular-dish-info">
@@ -342,12 +342,13 @@ require '../vender/massage.php';
 									</div>
 								</div>
 							</div>
-							<div class="rite-meta">
-                                	<a href="#" title="" class="view-more">view more food</a>
-                                </div>
+							
 						</div>
                     </div>
                 </div>
+                <div class="rite-meta">
+                                	<a href="#" title="" class="view-more">view more food</a>
+                                </div>
 				<div class="bottom-mockup"><img src="../assets/images/resource/mockup1.png" alt=""></div>
             </div>
         </section>
