@@ -50,21 +50,25 @@ include '../file/dbconnation.php';
                                              $res_name = mysqli_query($conn, $res_all);
                                              $fetch1 = mysqli_fetch_assoc($res_name)                       
                                         ?>
+                                 
                                         <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box style2 wow fadeIn" data-wow-delay="0.2s">
+                                        <form action="" method="post" >
                                             <div class="popular-dish-thumb">
                                                 <a href="#" title="" itemprop="url">
                                                     <img src="../assets/uploadedimage/foodimage/<?=$image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px" width="400px">
                                                 </a>                                               
                                             </div>
                                             <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url"><?=$name?></a></h4>
-                                                <span class="price">Rs.<?=$price?></span>
-                                                <a class="brd-rd4 " href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
+                                                <h4 itemprop="headline"><a href="#" title="" itemprop="url" name="foodname"><?=$name?></a></h4>
+                                                <span class="price" name="foodprice">Rs.<?=$price?></span>
+                                                <a class="brd-rd4 " href="#" title="Order Now" itemprop="url">Order Now</a>
+                                                                                                            
+                                                       </form> 
                                                 <div class="restaurant-info">
                                                     <img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="restaurant-logo1.png" itemprop="image" height="50px" width="50px"  style="border-radius: 50px;">  
                                                     <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url"><?=$fetch1['resname']?></a></h6>
+                                                        <h6 itemprop="headline"><a href="" title="" itemprop="url"><?=$fetch1['resname']?></a></h6>
                                                         <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?> </span>
                                                     </div>
                                                 </div>
