@@ -62,7 +62,7 @@ include '../file/dbconnation.php';
                                             <div class="popular-dish-info">
                                                 <h4 itemprop="headline"><a href="#" title="" itemprop="url" name="foodname"><?=$name?></a></h4>
                                                 <span class="price" name="foodprice">Rs.<?=$price?></span>
-                                                <a class="brd-rd4 " href="#" title="Order Now" itemprop="url">Order Now</a>
+                                                <a class="brd-rd4 " href="../file/order.php?id=<?=$id;?> " title="Order Now" itemprop="url">Order Now</a>
                                                                                                             
                                                        </form> 
                                                 <div class="restaurant-info">

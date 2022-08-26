@@ -20,7 +20,7 @@ if(isset($_SESSION['islogin']) && ($_SESSION['islogin'] == true)){ //if login in
 include '../layout/heading.php';
 require '../vender/massage.php';
 
-print_r($_SESSION['user_id']);
+// print_r($_SESSION['']);
  ?>
             <section>
             <div class="block">
@@ -245,8 +245,9 @@ print_r($_SESSION['user_id']);
                                     
                             ?>
 
-						<div class="col-md-4 col-xs-12" bgc>
-							<div class="dishes-caro" >
+						<div class="col-md-4 col-xs-12" >                       
+							<div class="dishes-caro" > 
+
 								<div class="dish-item">
 									<figure style="background-color:powderblue;"><img src="../assets/uploadedimage/foodimage/<?=$image ?>"  alt=" image" height="300px" width="400px"></figure>
 									<div class="item-meta">
@@ -259,28 +260,25 @@ print_r($_SESSION['user_id']);
 									<div class="caro-dish-name">
 										<h4><?=$name?></h4>
 										<span>RS.<?=$price?></span>
-									</div>
-								</div>
-                                
-                               
-                                 
-                                
-							</div>
-                            
-						</div>
+									</div>                                    
+								</div> 
+                              
+                                                         
+                            </div> 
+                                                    
+                        </div>
                         <?php 
                                          }
                                     }
                                 }
-                                        ?>
-                        
-
-                        
-						<div class="col-md-8 col-xs-12">
+                                        ?> 
                        
-							<div class="popular-of-month">
 
-                            <?php  
+						<div class="col-md-8 col-xs-12"> 
+                                            
+							<div class="popular-of-month">
+                                
+                        <?php  
                                  $sql = "SELECT * FROM foods Limit 4 ";
                                  $res = mysqli_query($conn, $sql);
                                                                  
@@ -301,8 +299,11 @@ print_r($_SESSION['user_id']);
                                         
                                     
                             ?>
+                            
 								<div class="pop-dish wow fadeIn" data-wow-delay="0.1s">
-									<div class="poplr-dish">                                   
+                              
+									<div class="poplr-dish">   
+                                                                        
 										<img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="" height="100px">
 										<div class="dish-meta">
 											<span>Rs.<?=$price?></span>
