@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../layout/heading.php';
 include '../file/dbconnation.php';
 ?>

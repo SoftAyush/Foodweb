@@ -32,6 +32,8 @@ $res = mysqli_query($conn, $sql);
         
 ?>
 <?php 
+ session_start();
+ $id= $_SESSION['user_id'];
 $sql = "select * from users where id = $id ";
 $res = mysqli_query($conn, $sql);
                                                                  
@@ -58,9 +60,9 @@ $res = mysqli_query($conn, $sql);
         <img src="../assets/uploadedimage/foodimage/<?=$image ?>" alt="foodimage" height="300px" width="300px" >
     </div>
     <input type="hidden" name="image" value="<?= $image ?>">
-    <input type="hidden" name="uname" value="<?=$uname?>">
-    <input type="hidden" name="ucity" value="<?=$ucity?>">
-    <input type="hidden" name="unumber" value="<?=$unumber?>">
+    <input type="text" name="uname" value="<?=$uname?>"><br>
+    <input type="text" name="ucity" value="<?=$ucity?>"><br>
+    <input type="text" name="unumber" value="<?=$unumber?>"><br>
     FoodName:<input type="text"  name="fname" value ="<?= $name; ?>"> <br>
     FoodPrice:<input type="text" name="fprice" value="<?=$price?>" ><br>
     Resturent Name: <input type="text" name="resname" value="<?=$fetch1['resname']?>"> <br>

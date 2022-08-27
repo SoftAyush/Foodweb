@@ -14,6 +14,15 @@ if(isset($_SESSION['islogin']) && ($_SESSION['islogin'] == true)){ //if login in
 
 
 ?>
+<style>
+    .popular-of-month{
+        margin-left: 200px !important;
+    }
+    .poplr-dish{
+        margin-top: 10px;
+    }
+</style>
+
 
 
 <?php 
@@ -223,57 +232,7 @@ require '../vender/massage.php';
 								</div>
                             </div>
                         </div>
-                        <?php  
-                                 $sql = "SELECT * FROM foods Limit 3 ";
-                                 $res = mysqli_query($conn, $sql);
-                                                                 
-                                 if ($res == TRUE) {
-                                     $count = mysqli_num_rows($res);
-                                         if ($count > 0) {
-                                            
-                                         while ($fetch = mysqli_fetch_assoc($res)) {
-                     
-                                             $id = $fetch['id'];
-                                             $name = $fetch['foodname']; 
-                                             $image =$fetch['foodimage'];
-                                             $price = $fetch['foodprice'];                                   
-                                             $resid = $fetch['resid']; 
-                                             $res_all = "select * from vendor where id = '$resid'";
-                                             $res_name = mysqli_query($conn, $res_all);
-                                             $fetch1 = mysqli_fetch_assoc($res_name)                       
-                                        
-                                    
-                            ?>
-
-						<div class="col-md-4 col-xs-12" >                       
-							<div class="dishes-caro" > 
-
-								<div class="dish-item">
-									<figure style="background-color:powderblue;"><img src="../assets/uploadedimage/foodimage/<?=$image ?>"  alt=" image" height="300px" width="400px"></figure>
-									<div class="item-meta">
-										<img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="" style="border-radius: 50px;">
-										<div>
-											<span><?=$fetch1['resname']?></span>
-											<p><?=$fetch1['city']?>,<?=$fetch1['country']?> </p>
-										</div>
-									</div>
-									<div class="caro-dish-name">
-										<h4><?=$name?></h4>
-										<span>RS.<?=$price?></span>
-									</div>                                    
-								</div> 
-                              
-                                                         
-                            </div> 
-                                                    
-                        </div>
-                        <?php 
-                                         }
-                                    }
-                                }
-                                        ?> 
-                       
-
+                      
 						<div class="col-md-8 col-xs-12"> 
                                             
 							<div class="popular-of-month">
