@@ -88,117 +88,59 @@ if ($res == TRUE) {
                                                             <a class="remove-noti" href="#" title="" itemprop="url"><img src="../assets/images/close-icon.png" alt="close-icon.png" itemprop="image"></a>
                                                         </div>
                                                         <div class="dashboard-title">
-                                                            <h4 itemprop="headline">SUGGESTED RESTAURANTS</h4>
-                                                            <span>Define <a class="red-clr" href="#" title="" itemprop="url">Search criteria</a> to search for specific</span>
+                                                            <h4 itemprop="headline">SUGGESTED FOODS</h4>
+                                                            <!-- <span>Define <a class="red-clr" href="#" title="" itemprop="url">Search criteria</a> to search for specific</span> -->
                                                         </div>
+                                                        <?php 
+                                                         $sql = "SELECT * FROM foods ORDER BY id DESC LIMIT 3";
+                                                         $res = mysqli_query($conn, $sql);
+                                                             if($res == TRUE) {
+                                                             $count = mysqli_num_rows($res);
+                                                                 if ($count > 0) {
+                                                                    
+                                                                 while ($fetch = mysqli_fetch_assoc($res)) {
+                                             
+                                                                     $id = $fetch['id'];
+                                                                     $name = $fetch['foodname'];
+                                                                     $image = $fetch['foodimage'];
+                                                                     $price = $fetch['foodprice'];
+                                                                     $resid = $fetch['resid']; 
+                                                                     $res_all = "select * from vendor where id = '$resid'";
+                                                                     $res_name = mysqli_query($conn, $res_all);
+                                                                     $fetch1 = mysqli_fetch_assoc($res_name)
+                                                        ?>
                                                         <div class="restaurants-list">
                                                             <div class="featured-restaurant-box style3 brd-rd5 wow fadeInUp" data-wow-delay="0.2s">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-1.png" alt="restaurant-logo1-1.png" itemprop="image"></a></div>
+                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="restaurant-logo1-1.png" itemprop="image"></a></div>
                                                                 <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Domino's Pizza</a></h4>
+                                                                    <span class="red-clr"><?=$fetch1['resname']?></span>
+                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url"><?=$name?></a></h4>
                                                                     <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
+                                                                        <li><i class="fa fa-check-circle-o"></i> Rs.<?=$price?></li>
+                                                                        <!-- <li><i class="flaticon-transport"></i> 30min</li> -->
                                                                     </ul>
                                                                 </div>
+                                                               
                                                                 <div class="view-menu-liks">
-                                                                    <span class="red-bg brd-rd4 post-likes"><i class="fa fa-heart-o"></i> 12</span>
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
+                                                                    <!-- <span class="red-bg brd-rd4 post-likes"><i class="fa fa-heart-o"></i> 12</span> -->
+                                                                    <a class="brd-rd3" href="../file/menu.php" title="" itemprop="url">View Menu</a>
                                                                 </div>
+                                                                
                                                             </div>
-                                                            <div class="featured-restaurant-box style3 brd-rd5 wow fadeInUp" data-wow-delay="0.3s">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-2.png" alt="restaurant-logo1-2.png" itemprop="image"></a></div>
-                                                                <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Pizza Hut</a></h4>
-                                                                    <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $40</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="view-menu-liks">
-                                                                    <span class="red-bg brd-rd4 post-likes"><i class="fa fa-heart-o"></i> 20</span>
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="featured-restaurant-box style3 brd-rd5 wow fadeInUp" data-wow-delay="0.4s">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-1.png" alt="restaurant-logo1-1.png" itemprop="image"></a></div>
-                                                                <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Burger King</a></h4>
-                                                                    <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $100</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="view-menu-liks">
-                                                                    <span class="red-bg brd-rd4 post-likes"><i class="fa fa-heart-o"></i> 15</span>
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
-                                                                </div>
-                                                            </div>
+                                                            
                                                         </div>
+                                                        <?php
+                                                                 }
+                                                                }
+                                                            }
+                                                                ?>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="my-bookings">
-                                                    <div class="tabs-wrp brd-rd5">
-                                                        <h4 itemprop="headline">MY BOOKINGS</h4>
-                                                        <div class="select-wrap-inner">
-                                                            <div class="select-wrp2">
-                                                                <select>
-                                                                    <option>Select Booking Status</option>
-                                                                    <option>Select Booking Status</option>
-                                                                    <option>Select Booking Status</option>
-                                                                </select>
-                                                            </div>
-                                                            <div class="select-wrp2">
-                                                                <select>
-                                                                    <option>Select Date Range</option>
-                                                                    <option>Select Date Range</option>
-                                                                    <option>Select Date Range</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="booking-table">
-                                                            <table>
-                                                                <thead>
-                                                                    <tr><th>RESTAURANT NAME</th><th>DATE</th><th>STATUS</th></tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr>
-                                                                        <td><h5 itemprop="headline"><a href="#" title="" itemprop="url">Jet's Kitchen ( #8589 )</a></h5></td>
-                                                                        <td>Aug 17,2017</td>
-                                                                        <td><span class="brd-rd3 processing">PROCESSING</span> <a class="detail-link brd-rd50" href="#" title="" itemprop="url"><i class="fa fa-chain"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><h5 itemprop="headline"><a href="#" title="" itemprop="url">Jet's Kitchen ( #8589 )</a></h5></td>
-                                                                        <td>Aug 17,2017</td>
-                                                                        <td><span class="brd-rd3 processing">PROCESSING</span> <a class="detail-link brd-rd50" href="#" title="" itemprop="url"><i class="fa fa-chain"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><h5 itemprop="headline"><a href="#" title="" itemprop="url">Jet's Kitchen ( #8589 )</a></h5></td>
-                                                                        <td>Aug 17,2017</td>
-                                                                        <td><span class="brd-rd3 completed">COMPLETED</span> <a class="detail-link brd-rd50" href="#" title="" itemprop="url"><i class="fa fa-chain"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><h5 itemprop="headline"><a href="#" title="" itemprop="url">Jet's Kitchen ( #8589 )</a></h5></td>
-                                                                        <td>Aug 17,2017</td>
-                                                                        <td><span class="brd-rd3 processing">PROCESSING</span> <a class="detail-link brd-rd50" href="#" title="" itemprop="url"><i class="fa fa-chain"></i></a></td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td><h5 itemprop="headline"><a href="#" title="" itemprop="url">Jet's Kitchen ( #8589 )</a></h5></td>
-                                                                        <td>Aug 17,2017</td>
-                                                                        <td><span class="brd-rd3 completed">COMPLETED</span> <a class="detail-link brd-rd50" href="#" title="" itemprop="url"><i class="fa fa-chain"></i></a></td>
-                                                                    </tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                               
                                                 <div class="tab-pane fade" id="my-orders">
                                                     <div class="tabs-wrp brd-rd5">
                                                         <h4 itemprop="headline">MY ORDERS</h4>
-                                                        <div class="select-wrap-inner">
+                                                        <!-- <div class="select-wrap-inner">
                                                             <div class="select-wrp2">
                                                                 <select>
                                                                     <option>Select Orders Status</option>
@@ -213,66 +155,53 @@ if ($res == TRUE) {
                                                                     <option>Select Date Range</option>
                                                                 </select>
                                                             </div>
-                                                        </div>
+                                                        </div> -->
+
+                                                        <?php  
+                $username= $_SESSION['username']; 
+              
+                  $sql = "SELECT * FROM orders ";
+                   $res = mysqli_query($conn, $sql);
+                       if($res == TRUE) {
+                       $count = mysqli_num_rows($res);
+                           if ($count > 0) {
+                              
+                           while ($fetch = mysqli_fetch_assoc($res)) {
+       
+                               $id=$fetch['id'];
+                               $name = $fetch['foodname'];
+                               $image = $fetch['foodimage'];
+                               $price = $fetch['foodprice'];
+                               $ucity = $fetch['usercity']; 
+                               $uname = $fetch['Username']; 
+                               $unumber = $fetch['usernumber']; 
+                               $resname = $fetch['resname']; 
+                               
+                            ?>
+
                                                         <div class="order-list">
                                                             <div class="order-item brd-rd5">
                                                                 <div class="order-thumb brd-rd5">
-                                                                    <a href="#" title="" itemprop="url"><img src="../assets/images/resource/order-img1.jpg" alt="order-img1.jpg" itemprop="image"></a>
-                                                                    <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span>
+                                                                    <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="order-img1.jpg" itemprop="image"></a>
+                                                                    <!-- <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 4.25</span> -->
                                                                 </div>
                                                                 <div class="order-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Maenaam Thai Restaurant</a></h4>
+                                                                    <span class="red-clr"><?php echo $resname?></span>
+                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url"><?=$name?></a></h4>
                                                                     
-                                                                    <span class="price">$85.00</span>
-                                                                    <span class="processing brd-rd3">PROCESSING</span>
-                                                                    <a class="brd-rd2" href="#" title="" itemprop="url">Order Detail</a>
+                                                                    <span class="price">Rs.<?php echo $price ?></span>
+                                                                    <!-- <span class="processing brd-rd3">PROCESSING</span> -->
+                                                                    <a class="brd-rd2" href="../file/ordercancel.php?id=<?=$id?>" title="" itemprop="url">Order Canaled</a>
                                                                 </div>
                                                             </div>
-                                                            <div class="order-item brd-rd5">
-                                                                <div class="order-thumb brd-rd5">
-                                                                    <a href="#" title="" itemprop="url"><img src="../assets/images/resource/order-img2.jpg" alt="order-img2.jpg" itemprop="image"></a>
-                                                                    <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 3.0</span>
-                                                                </div>
-                                                                <div class="order-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Maenaam Thai Restaurant</a></h4>
-                                                                    
-                                                                    <span class="price">$85.00</span>
-                                                                    <span class="completed brd-rd3">COMPLETED</span>
-                                                                    <a class="brd-rd2" href="#" title="" itemprop="url">Order Detail</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="order-item brd-rd5">
-                                                                <div class="order-thumb brd-rd5">
-                                                                    <a href="#" title="" itemprop="url"><img src="assets/images/resource/order-img3.jpg" alt="order-img3.jpg" itemprop="image"></a>
-                                                                    <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 5.00</span>
-                                                                </div>
-                                                                <div class="order-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Maenaam Thai Restaurant</a></h4>
-                                                                    
-                                                                    <span class="price">$85.00</span>
-                                                                    <span class="completed brd-rd3">COMPLETED</span>
-                                                                    <a class="brd-rd2" href="#" title="" itemprop="url">Order Detail</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="order-item brd-rd5">
-                                                                <div class="order-thumb brd-rd5">
-                                                                    <a href="#" title="" itemprop="url"><img src="../assets/images/resource/order-img4.jpg" alt="order-img4.jpg" itemprop="image"></a>
-                                                                    <span class="post-rate yellow-bg brd-rd2"><i class="fa fa-star-o"></i> 5.30</span>
-                                                                </div>
-                                                                <div class="order-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Maenaam Thai Restaurant</a></h4>
-                                                                    
-                                                                    <span class="price">$85.00</span>
-                                                                    <span class="completed brd-rd3">COMPLETED</span>
-                                                                    <a class="brd-rd2" href="#" title="" itemprop="url">Order Detail</a>
-                                                                </div>
-                                                            </div>
+                                                            <?php
+                    }
+                }
+            }
+            ?>
+                                                          
                                                         </div>
-                                                        <div class="pagination-wrapper text-center style2">
+                                                        <!-- <div class="pagination-wrapper text-center style2">
                                                             <ul class="pagination justify-content-center">
                                                                 <li class="page-item prev"><a class="page-link brd-rd2" href="#" itemprop="url">PREV</a></li>
                                                                 <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">1</a></li>
@@ -284,113 +213,35 @@ if ($res == TRUE) {
                                                                 <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li>
                                                                 <li class="page-item next"><a class="page-link brd-rd2" href="#" itemprop="url">NEXT</a></li>
                                                             </ul>
-                                                        </div><!-- Pagination Wrapper -->
+                                                        </div> -->
+                                                        <!-- Pagination Wrapper -->
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="shortlists">
-                                                    <div class="tabs-wrp brd-rd5">
-                                                        <h4 itemprop="headline">SHORTLISTS</h4>
-                                                        <div class="restaurants-list">
-                                                            <div class="featured-restaurant-box style3 brd-rd5">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-1.png" alt="restaurant-logo1-1.png" itemprop="image"></a></div>
-                                                                <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Domino's Pizza</a></h4>
-                                                                    <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $50</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="view-menu-liks">
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="featured-restaurant-box style3 brd-rd5">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-2.png" alt="restaurant-logo1-2.png" itemprop="image"></a></div>
-                                                                <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Pizza Hut</a></h4>
-                                                                    <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $40</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="view-menu-liks">
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="featured-restaurant-box style3 brd-rd5">
-                                                                <div class="featured-restaurant-thumb"><a href="#" title="" itemprop="url"><img src="../assets/images/resource/restaurant-logo1-3.png" alt="restaurant-logo1-3.png" itemprop="image"></a></div>
-                                                                <div class="featured-restaurant-info">
-                                                                    <span class="red-clr">5th Avenue New York 68</span>
-                                                                    <h4 itemprop="headline"><a href="#" title="" itemprop="url">Burger King</a></h4>
-                                                                    <ul class="post-meta">
-                                                                        <li><i class="fa fa-check-circle-o"></i> Min order $100</li>
-                                                                        <li><i class="flaticon-transport"></i> 30min</li>
-                                                                    </ul>
-                                                                </div>
-                                                                <div class="view-menu-liks">
-                                                                    <a class="brd-rd3" href="#" title="" itemprop="url">View Menu</a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="pagination-wrapper text-center style2">
-                                                            <ul class="pagination justify-content-center">
-                                                                <li class="page-item prev"><a class="page-link brd-rd2" href="#" itemprop="url">PREV</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">1</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">2</a></li>
-                                                                <li class="page-item active"><span class="page-link brd-rd2">3</span></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">4</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">5</a></li>
-                                                                <li class="page-item">........</li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li>
-                                                                <li class="page-item next"><a class="page-link brd-rd2" href="#" itemprop="url">NEXT</a></li>
-                                                            </ul>
-                                                        </div><!-- Pagination Wrapper -->
-                                                    </div>
-                                                </div>
-                                                <div class="tab-pane fade" id="statement">
-                                                    <div class="tabs-wrp brd-rd5">
-                                                        <h4 itemprop="headline">STATEMENTS</h4>
-                                                        <div class="select-wrap-inner">
-                                                            <div class="select-wrp2"></div>
-                                                            <div class="select-wrp2">
-                                                                <select>
-                                                                    <option>Select Date Range</option>
-                                                                    <option>Select Date Range</option>
-                                                                    <option>Select Date Range</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                        <div class="statement-table">
-                                                            <table>
-                                                                <thead>
-                                                                    <tr><th>TRANSACTION ID</th><th>ORDER ID</th><th>DATE</th><th>DETAIL</th><th>AMOUNT</th></tr>
-                                                                </thead>
-                                                                <tbody>
-                                                                    <tr><td>#30737723</td><td>8720</td><td>Aug 17,2017</td><td>Order - Misumisu Thai</td><td><span class="red-clr">$35.97</span></td></tr>
-                                                                    <tr><td>#30737723</td><td>8720</td><td>Aug 17,2017</td><td>Order - Jet's Kitchen</td><td><span class="red-clr">$35.97</span></td></tr>
-                                                                    <tr><td>#30737723</td><td>8720</td><td>Aug 17,2017</td><td>Order - Misumisu Thai</td><td><span class="red-clr">$35.97</span></td></tr>
-                                                                    <tr><td>#30737723</td><td>8720</td><td>Aug 17,2017</td><td>Order - Misumisu Thai</td><td><span class="red-clr">$35.97</span></td></tr>
-                                                                    <tr><td>#30737723</td><td>8720</td><td>Aug 17,2017</td><td>Order - Misumisu Thai</td><td><span class="red-clr">$35.97</span></td></tr>
-                                                                </tbody>
-                                                            </table>
-                                                        </div><!-- Statement Table -->
-                                                        <div class="pagination-wrapper text-center style2">
-                                                            <ul class="pagination justify-content-center">
-                                                                <li class="page-item prev"><a class="page-link brd-rd2" href="#" itemprop="url">PREV</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">1</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">2</a></li>
-                                                                <li class="page-item active"><span class="page-link brd-rd2">3</span></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">4</a></li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">5</a></li>
-                                                                <li class="page-item">........</li>
-                                                                <li class="page-item"><a class="page-link brd-rd2" href="#" itemprop="url">18</a></li>
-                                                                <li class="page-item next"><a class="page-link brd-rd2" href="#" itemprop="url">NEXT</a></li>
-                                                            </ul>
-                                                        </div><!-- Pagination Wrapper -->
-                                                    </div>
-                                                </div>
+                                               <?php
+                                               $id= $_SESSION['user_id'];
+
+                                               $sql = "SELECT * FROM users Where id= $id";
+                                               $res = mysqli_query($conn, $sql);
+                                               if ($res == TRUE) {
+                                                   $count = mysqli_num_rows($res);
+                                                   // $ad_id = 1;
+                                                   if ($count > 0) {
+                                                       while ($fetch = mysqli_fetch_assoc($res)) {
+                                                           $id=$fetch['id'];
+                                                           $name = $fetch['Name'];
+                                                           $email = $fetch['Email'];
+                                                           $image = $fetch['image'];
+                                                           $phone = $fetch['phone'];
+                                                           $country = $fetch['country'];
+                                                           $state = $fetch['state'];
+                                                           $city = $fetch['city'];
+                                                          
+                                                       }
+                                               
+                                                     }
+                                                   }
+                                                       ?>
+                                               
                                                 <div class="tab-pane fade" id="account-settings">
                                                     <div class="tabs-wrp account-settings brd-rd5">
                                                         <h4 itemprop="headline">ACCOUNT SETTINGS</h4>
@@ -399,7 +250,7 @@ if ($res == TRUE) {
                                                                 <div class="col-md-4 col-sm-4 col-lg-4">
                                                                     <div class="profile-info text-center">
                                                                         <div class="profile-thumb brd-rd50">
-                                                                            <img id="profile-display" src="../assets/uploadedimage/userprofile/<?php echo $image; ?>" alt="profile-img1.jpg" itemprop="image">
+                                                                            <img id="profile-display" src="../assets/uploadedimage/userprofile/<?=$image; ?>" alt="profile-img1.jpg" itemprop="image">
                                                                         </div>
                                                                         <a class="red-clr change-password" href="#" title="" itemprop="url">Change Password</a>
                                                                         <div class="profile-img-upload-btn">

@@ -91,6 +91,8 @@ $oprice= $price*$qty;
 $sql = "INSERT INTO `orders` (Username, usercity, usernumber, foodimage, foodname, resname, foodprice) VALUES ('$uname','$ucity','$unumber','$oimage','$oname','$resname','$oprice')";
 
 if($conn->query($sql)== true){
+  
+    header("location: menu.php");
     echo "<script> alert('Your Order Is Placed');</script>";
 }
 

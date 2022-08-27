@@ -16,7 +16,7 @@ if(isset($_POST['Signin']))
    {
 
        session_start();
-       $_SESSION['username']=$row['username'];
+       $_SESSION['admin_name']=$row['username'];
        $_SESSION['admin_id']=$row['id'];
        $_SESSION['islogin'] = True;
        

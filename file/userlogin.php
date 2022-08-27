@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
    {
 
        session_start();
-       $_SESSION['user_name']=$row['name'];
+       $_SESSION['username']=$row['name'];
        $_SESSION['email']=$row['email'];
        $_SESSION['user_id']=$row['id'];
        $_SESSION['islogin'] = True;
