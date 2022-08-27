@@ -41,8 +41,8 @@
                                                 <li><a href="#" title="" itemprop="url">Careers</a></li>
                                                 <li><a href="#" title="" itemprop="url">Investor Relations</a></li>
                                                 <li><a href="#" title="" itemprop="url">Press Releases</a></li>
-                                                <li><a href="#" title="" itemprop="url">Shop with Points</a></li>
-                                                <li><a href="#" title="" itemprop="url">More Branches</a></li>
+                                                <!-- <li><a href="#" title="" itemprop="url">Shop with Points</a></li> -->
+                                                <!-- <li><a href="#" title="" itemprop="url">More Branches</a></li> -->
                                             </ul>
                                         </div>
                                     </div>
@@ -52,8 +52,8 @@
                                             <ul>
                                                 <li><a href="#" title="" itemprop="url">Returns</a></li>
                                                 <li><a href="#" title="" itemprop="url">Shipping Info</a></li>
-                                                <li><a href="#" title="" itemprop="url">Gift Cards</a></li>
-                                                <li><a href="#" title="" itemprop="url">Size Guide</a></li>
+                                                <!-- <li><a href="#" title="" itemprop="url">Gift Cards</a></li> -->
+                                                <!-- <li><a href="#" title="" itemprop="url">Size Guide</a></li> -->
                                                 <li><a href="#" title="" itemprop="url">Money Back</a></li>
                                             </ul>
                                         </div>

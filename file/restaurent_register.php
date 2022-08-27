@@ -4,7 +4,8 @@ include '../layout/heading.php';
 
 <section>
             <div class="block">
-                <div class="fixed-bg" style="background-image: url(../assets/images/topbg.jpg);"></div>
+                
+                <div class="fixed-bg" style="background-image: url(../assets/images/bgi.jpg);"></div>
                 <div class="page-title-wrapper text-center">
                     <div class="col-md-12 col-sm-12 col-lg-12">
                         <div class="page-title-inner">

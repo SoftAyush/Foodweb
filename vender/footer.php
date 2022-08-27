@@ -1,7 +1,7 @@
 
 <div class="footer">
 <div class= "wrapper">
-    <p class= "text-center"> 2022 All right reserverd.Developed by Aayush Timalsina. </p>
+    <p class= "text-center"> 2022 All right reserverd.Developed by Kanchan Khatiwada. </p>
 </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
