@@ -5,7 +5,7 @@ include '../vender/massage.php';
 include '../file/dbconnation.php';
 
 // echo $_SERVER['PHP_SELF'];
-$resid =$_SESSION['user_id'];
+$resid =$_SESSION['admin_id'];
 $cat = "SELECT * from category where resid = $resid";
 $categories = mysqli_query($conn, $cat);
 // print_r($res);
@@ -13,7 +13,7 @@ $categories = mysqli_query($conn, $cat);
 if(isset($_POST["btnSubmit"]))
 {
 
-$resid =$_SESSION['user_id'];
+$resid =$_SESSION['admin_id'];
 $name =$_POST['foodname'];
 $category =$_POST['category'];
 // $image=$_POST['foodimage'];
