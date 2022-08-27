@@ -2,7 +2,7 @@
 session_start();
 include '../vender/header.php';
     include '../file/dbconnation.php';
-    $id= $_SESSION['user_id'];
+    $id= $_SESSION['admin_id'];
 
     
     $sql = "SELECT * FROM vendor Where id= $id";

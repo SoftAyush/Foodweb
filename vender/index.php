@@ -19,16 +19,12 @@ include '../file/dbconnation.php';
 <?php
     require '../vender/massage.php';
     ?>
-<div class= "main">
-<div class= "wrapper">
-   <style>
-    th{
-        padding-right: 30px;
-    }
-   </style>
+<!-- <div class= "main"> -->
+<div class= "wrapper" >
+   
     
         <h1>Order list</h1>
-        <table class="tblfull" style="width:100%;">
+        <table class="tblfull" >
     <tr> 
         <th>S.N</th>
         <th>User Name</th>
@@ -82,7 +78,7 @@ include '../file/dbconnation.php';
             ?>
 </table>
     
-</div>
+<!-- </div> -->
 </div>
 
 <?php include 'footer.php'; ?>

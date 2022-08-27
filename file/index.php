@@ -30,19 +30,7 @@ require '../vender/massage.php';
                 <div class="restaurant-searching text-center">
                     <div class="restaurant-searching-inner">
                         <h2 itemprop="headline">Order <span>Food Online From</span> the Best Restaurants</h2>
-                        <form class="restaurant-search-form brd-rd2">
-                            <div class="row mrg10">
-                                <div class="col-md-6 col-sm-5 col-lg-5 col-xs-12">
-                                    <div class="input-field brd-rd2"><input class="brd-rd2" type="text" placeholder="Restaurant Name"></div>
-                                </div>
-                                <div class="col-md-4 col-sm-4 col-lg-4 col-xs-12">
-                                    <div class="input-field brd-rd2"><i class="fa fa-map-marker"></i><input class="brd-rd2" type="text" placeholder="Search Location"><i class="fa fa-location-arrow"></i></div>
-                                </div>
-                                <div class="col-md-2 col-sm-3 col-lg-3 col-xs-12">
-                                    <button class="brd-rd2 red-bg" type="submit">SEARCH</button>
-                                </div>
-                            </div>
-                        </form>
+                        
                         <div class="funfacts">
                                 <div class="col-md-3 col-sm-6 col-lg-3">
                                     <div class="fact-box">
@@ -171,7 +159,7 @@ require '../vender/massage.php';
                                     <div class="col-md-4 col-sm-6 col-lg-4">
                                         <div class="popular-dish-box wow fadeIn" data-wow-delay="0.2s">
                                             <div class="popular-dish-thumb">
-                                                <a href="#" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px" width="400px"></a>
+                                                <a href="../file/menu.php" title="" itemprop="url"><img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="popular-dish-img1.jpg" itemprop="image" height="300px" width="400px"></a>
                                             
                                             </div>
                                             <div class="popular-dish-info">
@@ -180,7 +168,7 @@ require '../vender/massage.php';
 												</h4>
                                             
                                                 <span class="price">Rs.<?=$price?></span>
-                                                <a class="brd-rd2" href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
+                                                <a class="brd-rd2" href="../file/menu.php" title="Order Now" itemprop="url">Order Now</a>
                                                 <div class="restaurant-info">
                                                     <img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo'] ?>" alt="restaurant-logo1.png" itemprop="image" height=50px; width= 50px; style="border-radius: 50px;">
                                                     <div class="restaurant-info-inner">
@@ -340,14 +328,14 @@ require '../vender/massage.php';
                                                     <div class="featured-restaurant-info">
                                                         <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?></span>
                                                         <h4 itemprop="headline"><a href="#" title="" itemprop="url"><?=$fetch1['resname']?></a></h4>
-                                                        <span class="food-types">Type of food: <a href="#" title="" itemprop="url"><?=$name?></a></span>
+                                                        <span class="food-types">Type of food: <a href="../file/menu.php" title="" itemprop="url"><?=$name?></a></span>
                                                         <ul class="post-meta">
                                                             <li><i class="fa fa-check-circle-o"></i>  Rs.<?=$price?></li>
                                                             
                                                             <li><i class="flaticon-money"></i> Accepts cash payments</li>
                                                         </ul>
                                                         
-                                                        <a class="brd-rd5" href="#" title="Order Online">Order Now</a>
+                                                        <a class="brd-rd5" href="../file/menu.php" title="Order Online">Order Now</a>
                                                     </div>
 
                                                 </div>

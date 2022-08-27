@@ -7,7 +7,7 @@ include'../file/dbconnation.php';
 
 if(isset($_POST["submit"]))
 {
-$resid =$_SESSION['user_id'];
+$resid =$_SESSION['admin_id'];
 $name =$_POST['name'];
 $status=$_POST['status'];
 

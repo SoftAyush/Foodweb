@@ -59,10 +59,11 @@
   table tr th{
     border-bottom: 1px solid grey;
     padding: 1%;
-    text-align: left ;
+    text-align: center ;
   }
   table tr td{
     padding: 1%;
+    text-align: center ;
   }
 
   .primarybtn

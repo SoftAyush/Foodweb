@@ -59,13 +59,13 @@ include '../file/dbconnation.php';
                                                 </a>                                               
                                             </div>
                                             <div class="popular-dish-info">
-                                                <h4 itemprop="headline"><a href="food-detail.html" title="" itemprop="url"><?=$name?></a></h4>
+                                                <h4 itemprop="headline"><a href="../file/menu.php" title="" itemprop="url"><?=$name?></a></h4>
                                                 <span class="price">Rs.<?=$price?></span>
-                                                <a class="brd-rd4 " href="food-detail.html" title="Order Now" itemprop="url">Order Now</a>
+                                                <a class="brd-rd4 " href="../file/menu.php" title="Order Now" itemprop="url">Order Now</a>
                                                 <div class="restaurant-info">
                                                     <img src="../assets/uploadedimage/reslogo/<?php echo $fetch1['reslogo']?>" alt="restaurant-logo1.png" itemprop="image" height="50px" width="50px"  style="border-radius: 50px;">  
                                                     <div class="restaurant-info-inner">
-                                                        <h6 itemprop="headline"><a href="restaurant-detail.html" title="" itemprop="url"><?=$fetch1['resname']?></a></h6>
+                                                        <h6 itemprop="headline"><a href="#" title="" itemprop="url"><?=$fetch1['resname']?></a></h6>
                                                         <span class="red-clr"><?=$fetch1['city']?>,<?=$fetch1['country']?> </span>
                                                     </div>
                                                 </div>
