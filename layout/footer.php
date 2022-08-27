@@ -75,26 +75,25 @@
                 </div>
             </div>
         </footer>
-        <!-- <div class="bottom-bar dark-bg text-center">
+        <div class="bottom-bar dark-bg text-center">
             <div class="container">
                 <p itemprop="description"><a target="_blank" href="https://www.templateshub.net">Templates Hub</a></p>
             </div>
         </div>   
         
-         Bottom Bar -->
+         <!-- Bottom Bar -->
 
-        <!-- <div class="newsletter-popup-wrapper text-center">
+        <div class="newsletter-popup-wrapper text-center">
             <div class="newsletter-popup-inner" style="background-image: url(../assets/images/newsletter-bg.jpg);">
                 <a class="close-btn brd-rd50" href="#" title="Close Button" itemprop="url"><i class="fa fa-close"></i></a>
-                <h3 itemprop="headline"><i class="fa fa-envelope-open red-clr"></i> SIGN UP FOR RECENT UPDATES</h3>
-                <p itemprop="description">Join our Subscribers list to get the latest news, updates and special offers delivered directly in your inbox.</p>
-                <form class="newsletter-frm brd-rd30">
-                    <input class="brd-rd30" type="email" placeholder="ENTER YOUR EMAIL">
-                    <button class="brd-rd30 red-bg" type="submit">SUBSCRIBE</button>
-                </form>
-                <span class="red-clr"><i class="fa fa-check"></i> Thanks, your address has been added.</span>
+                <h3 itemprop="headline"><i class="fa fa-envelope-open red-clr"></i> SIGN UP AND SIGN IN FOR FOOD ORDER</h3>
+                <p itemprop="description">Join our Subscribers list to get the latest news, updates and special offers delivered directly in your inbox.</p><br>               
+                
+                        <a class="log-popup-btn brd-rd30 red-bg" href="#" title="Login" itemprop="url" style="padding:10px; color:white; margin-left:200px;">LOGIN</a>  <a class="sign-popup-btn  brd-rd30 red-bg" href="#" title="Register" itemprop="url" style="padding:10px; color:white;">REGISTER</a>
+                   
+                <!-- <span class="red-clr"><i class="fa fa-check"></i> Thanks, your address has been added.</span> -->
             </div>
-        </div>  -->
+        </div> 
         <!-- Newsletter Popup Wrapper -->
 
         <div class="log-popup text-center">
