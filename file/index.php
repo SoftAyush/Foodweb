@@ -14,14 +14,7 @@ if(isset($_SESSION['islogin']) && ($_SESSION['islogin'] == true)){ //if login in
 
 
 ?>
-<style>
-    .popular-of-month{
-        margin-left: 200px !important;
-    }
-    .poplr-dish{
-        margin-top: 10px;
-    }
-</style>
+
 
 
 
@@ -235,7 +228,7 @@ require '../vender/massage.php';
                       
 						<div class="col-md-8 col-xs-12"> 
                                             
-							<div class="popular-of-month">
+							<div class="popular-of-month" style="margin-left:200px; ">
                                 
                         <?php  
                                  $sql = "SELECT * FROM foods Limit 4 ";
@@ -261,7 +254,7 @@ require '../vender/massage.php';
                             
 								<div class="pop-dish wow fadeIn" data-wow-delay="0.1s">
                               
-									<div class="poplr-dish">   
+									<div class="poplr-dish" style="margin-top:10px;">   
                                                                         
 										<img src="../assets/uploadedimage/foodimage/<?php echo $image ?>" alt="" height="100px">
 										<div class="dish-meta">
