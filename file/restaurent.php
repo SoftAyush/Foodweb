@@ -52,10 +52,10 @@
                                                     <div class="widget-data">
                                                         <ul>
                                                            
-                                                            <li><a href="../file/north-indian.php" title="" itemprop="url">North Indian</a> <span>28</span></li>
-                                                            <li><a href="../file/chinese.php" title="" itemprop="url">Chinese</a> <span>25</span></li>                                                            
-                                                            <li><a href="../file/pizza.php" title="" itemprop="url">Pizza</a> <span>6</span></li>                                                          
-                                                            <li><a href="../file/italian.php" title="" itemprop="url">Italian</a> <span>5</span></li>
+                                                            <li><a href="../file/north-indian.php" title="" itemprop="url">North Indian</a> </li>
+                                                            <li><a href="../file/chinese.php" title="" itemprop="url">Chinese</a> </li>                                                            
+                                                            <li><a href="../file/pizza.php" title="" itemprop="url">Thakali</a> </li>                                                          
+                                                            <li><a href="../file/italian.php" title="" itemprop="url">Italian</a> </li>
                                                         </ul>
                                                     </div>
                                                 </div>

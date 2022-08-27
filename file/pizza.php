@@ -8,8 +8,8 @@ include '../file/dbconnation.php';
                 <div class="page-title-wrapper text-center">
                     <div class="col-md-12 col-sm-12 col-lg-12">
                         <div class="page-title-inner">
-                            <h1 itemprop="headline">pizza</h1>
-                                <span>Our Best pizza </span>
+                            <h1 itemprop="headline">Nepali Thakali Foods</h1>
+                                <span>A Greate Restaurant </span>
                         </div>
                     </div>
                 </div>
@@ -20,7 +20,7 @@ include '../file/dbconnation.php';
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../file/index.php" title="" itemprop="url">Home</a></li>
                     <li class="breadcrumb-item"><a href="../file/restaurent.php" title="" itemprop="url">Restaurant</a></li> 
-                    <li class="breadcrumb-item active">Pizza</li>
+                    <li class="breadcrumb-item active">Thakali</li>
                 </ol>
             </div>
         </div> 
@@ -33,7 +33,7 @@ include '../file/dbconnation.php';
                                 <div class="remove-ext">
                                     <div class="row">
                                     <?php  
-                                         $sql = "SELECT * FROM foods Limit 9 ";
+                                         $sql =" SELECT category.name, foods.foodname,foods.foodimage,foods.foodprice,foods.resid FROM category CROSS JOIN foods WHERE category.id = foods.category AND category.name='Thakali'";
                                             $res = mysqli_query($conn, $sql);
                                                                  
                                         if ($res == TRUE) {
@@ -42,7 +42,7 @@ include '../file/dbconnation.php';
                                             
                                          while ($fetch = mysqli_fetch_assoc($res)) {
                      
-                                             $id = $fetch['id'];
+                                             
                                              $name = $fetch['foodname']; 
                                              $image =$fetch['foodimage'];
                                              $price = $fetch['foodprice'];                                   

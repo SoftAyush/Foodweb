@@ -21,10 +21,14 @@ include '../file/dbconnation.php';
     ?>
 <div class= "main">
 <div class= "wrapper">
-   
+   <style>
+    th{
+        padding-right: 30px;
+    }
+   </style>
     
         <h1>Order list</h1>
-        <table class="tblfull">
+        <table class="tblfull" style="width:100%;">
     <tr> 
         <th>S.N</th>
         <th>User Name</th>
@@ -33,8 +37,8 @@ include '../file/dbconnation.php';
         <th>Food Name</th>
         <th>Food Image</th>
         <th>Price</th>
-        <th>Resturen Name</th>
-        <!-- <th>Actions</th> -->
+        <th>Resturents Name</th>
+        
     </tr>
     <?php  
                
