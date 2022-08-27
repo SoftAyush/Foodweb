@@ -123,7 +123,7 @@ include '../vender/header.php';
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Update</button>
-  <button class=" btn btn-dark " ><a href="logout.php">Logout</a></button>
+  <!-- <button class=" btn btn-dark " ><a href="logout.php">Logout</a></button> -->
 
 </form>
  </div>
