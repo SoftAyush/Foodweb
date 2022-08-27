@@ -279,7 +279,7 @@ require '../vender/massage.php';
 							</div>                               
                         </div>                         				
 							<div class="rite-meta">
-                                <a href="#" title="" class="view-more">view more food</a>
+                                <a href="../file/menu.php" title="" class="view-more">view more food</a>
                             </div>
                               
 						</div>

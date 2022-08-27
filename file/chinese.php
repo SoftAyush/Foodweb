@@ -33,7 +33,7 @@ include '../file/dbconnation.php';
                                 <div class="remove-ext">
                                     <div class="row">
                                     <?php  
-                                         $sql =" SELECT category.name, foods.foodname,foods.foodimage,foods.foodprice,foods.resid FROM category CROSS JOIN foods WHERE category.id = foods.category AND category.name='chiness'";
+                                         $sql =" SELECT category.name, foods.foodname,foods.foodimage,foods.foodprice,foods.resid FROM category CROSS JOIN foods WHERE category.id = foods.category AND category.name='chinese'";
                                             $res = mysqli_query($conn, $sql);
                                                                  
                                         if ($res == TRUE) {
