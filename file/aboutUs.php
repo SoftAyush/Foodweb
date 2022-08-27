@@ -73,34 +73,7 @@ include '../layout/heading.php';
                                         </div>
                                     </div>
                                 </div>
-                                <div class="toggle-wrapper text-center bottom-padd80">
-                                    <div id="toggle" class="toggle">
-                                        <div class="toggle-item">
-                                            <h4><i class="fa fa-angle-right brd-rd50"></i> How many html templeates are added?</h4>
-                                            <div class="content">
-                                                <p>Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.</p>
-                                            </div>
-                                        </div>
-                                        <div class="toggle-item">
-                                            <h4><i class="fa fa-angle-right brd-rd50"></i> How many one page templates are added?</h4>
-                                            <div class="content">
-                                                <p>Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.</p>
-                                            </div>
-                                        </div>
-                                        <div class="toggle-item">
-                                            <h4><i class="fa fa-angle-right brd-rd50"></i> How many multi page templates are added?</h4>
-                                            <div class="content">
-                                                <p>Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.</p>
-                                            </div>
-                                        </div>
-                                        <div class="toggle-item">
-                                            <h4><i class="fa fa-angle-right brd-rd50"></i> The Porton comes with page builder?</h4>
-                                            <div class="content">
-                                                <p>Who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences.</p>
-                                            </div>
-                                        </div>
-                                    </div><!-- Accordions -->
-                                </div>
+                               
                                 <div class="featured-restaurant-food text-center bottom-padd80">
                                     <div class="featured-restaurant-food-thumb">
                                         <ul class="featured-restaurant-food-img-carousel">
@@ -117,7 +90,7 @@ include '../layout/heading.php';
                                             <li><img class="brd-rd3" src="../assets/images/resource/featured-restaurant-food-thumb-img3.jpg" alt="featured-restaurant-food-thumb-img3.jpg" itemprop="image"></li>
                                             <li><img class="brd-rd3" src="../assets/images/resource/featured-restaurant-food-thumb-img4.jpg" alt="featured-restaurant-food-thumb-img4.jpg" itemprop="image"></li>
                                             <li><img class="brd-rd3" src="../assets/images/resource/featured-restaurant-food-thumb-img5.jpg" alt="featured-restaurant-food-thumb-img5.jpg" itemprop="image"></li>
-                                            <li><img class="brd-rd3" src="../assets/" alt="featured-restaurant-food-thumb-img6.jpg" itemprop="image"></li>
+                                            <li><img class="brd-rd3" src="../assets/images/resource/featured-restaurant-food-thumb-img6.jpg" alt="featured-restaurant-food-thumb-img6.jpg" itemprop="image"></li>
                                         </ul>
                                     </div>
                                 </div>
